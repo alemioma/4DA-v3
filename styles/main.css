@@ -138,6 +138,14 @@ body.dark-theme .hero-bg .text-gray-600 {
     color: rgb(226 232 240) !important;
 }
 
+body.dark-theme .hero-bg a {
+    color: rgb(199 210 254) !important;
+}
+
+body.dark-theme .hero-bg a:hover {
+    color: rgb(224 231 255) !important;
+}
+
 body.dark-theme .hero-bg .border-gray-800 {
     border-color: rgb(148 163 184) !important;
     color: rgb(241 245 249) !important;
