@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4DA Developers - API Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="developers/css/style.css">
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <div data-include="sections/navbar.html"></div>
+
+    <!-- Sidebar + Content wrapper with consistent container -->
+    <div class="dev-layout-wrapper max-w-screen-2xl mx-auto">
+        <!-- Sidebar (positioned within container on desktop, slides on mobile) -->
+        <div data-include="developers/sections/sidebar.html"></div>
+
+        <!-- Mobile sidebar overlay -->
+        <div class="dev-sidebar-overlay" data-dev-sidebar-overlay></div>
+
+        <!-- Mobile sidebar toggle button -->
+        <button type="button" class="dev-sidebar-toggle" data-dev-sidebar-toggle aria-label="Toggle navigation" aria-expanded="false">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="dev-sidebar-toggle-icon-open">
+                <path fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 5.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 15.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-1.5Z" clip-rule="evenodd" />
+            </svg>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="dev-sidebar-toggle-icon-close" style="display:none">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+            </svg>
+        </button>
+
+        <!-- Main content area -->
+        <div class="dev-content px-4 sm:px-6 lg:px-8">
+            <!-- Desktop search bar -->
+            <div class="dev-search-bar-desktop">
+                <div data-include="developers/sections/search-bar.html"></div>
+            </div>
+
+            <!-- Mobile search bar -->
+            <div class="dev-search-bar-mobile">
+                <button type="button" class="dev-search-bar-btn" data-dev-search-toggle>
+                    <svg class="dev-search-bar-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 16.5 12 12m1.5-6a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" />
+                    </svg>
+                    <span class="dev-search-bar-text">Find something...</span>
+                </button>
+            </div>
+
+            <div class="dev-content-inner" data-include="developers/sections/content.html"></div>
+        </div>
+    </div>
+
+    <!-- Search dialog -->
+    <div class="dev-search-overlay" data-dev-search-overlay>
+        <div class="dev-search-dialog" data-dev-search-dialog>
+            <div class="dev-search-input-wrapper">
+                <svg class="dev-search-dialog-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 16.5 12 12m1.5-6a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" />
+                </svg>
+                <input type="text" class="dev-search-input" data-dev-search-input placeholder="Find something..." autocomplete="off" />
+            </div>
+            <div class="dev-search-results" data-dev-search-results></div>
+        </div>
+    </div>
+
+    <script src="scripts/include.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="developers/js/app.js"></script>
+</body>
+</html>

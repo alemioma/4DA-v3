@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@source "../sections/*.html";
+@source "../*.html";
+@source "../scripts/*.js";
+@source "../developers/sections/*.html";
+@source "../developers/**/*.html";
+
+body {
+    font-family: 'Inter', system_ui, sans-serif;
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #f3e8ff 40%, oklch(75% 0.183 55.934) 60%);
+}
+
+.solutions-bg {
+    background: linear-gradient(135deg, oklch(97.7% 0.014 308.299) 0%, oklch(97.7% 0.014 308.299) 0%, oklch(82.7% 0.119 306.383) 100%);
+}
+
+.red-section {
+    background: linear-gradient(135deg, oklch(45.5% 0.188 13.697) 0%, #7e22ce 100%);
+}
+
+.nav-link {
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #a855f7;
+}
+
+.partner-logo {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+}
+
+#pricing .pricing-table {
+    border-color: rgb(71 85 105 / 0.45);
+    color: rgb(226 232 240);
+}
+
+#pricing .pricing-table .text-gray-950,
+#pricing .pricing-table .text-gray-900,
+#pricing .pricing-table .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+#pricing .pricing-table .text-indigo-600 {
+    color: rgb(165 180 252) !important;
+}
+
+#pricing .pricing-table .bg-gray-50 {
+    background-color: rgb(15 23 42 / 0.9) !important;
+    border: 1px solid rgb(148 163 184 / 0.25);
+}
+
+#pricing .pricing-table .border-gray-100 {
+    border-color: rgb(148 163 184 / 0.22) !important;
+}
+
+#pricing .pricing-table .fill-green-600 {
+    fill: rgb(56 189 248) !important;
+}
+
+#pricing .pricing-table .fill-gray-400 {
+    fill: rgb(148 163 184) !important;
+}
+
+#pricing .pricing-table .bg-white {
+    background-color: rgb(15 23 42 / 0.8) !important;
+}
+
+#pricing .pricing-table .inset-ring-gray-300 {
+    --tw-inset-ring-color: rgb(148 163 184 / 0.5) !important;
+}
+
+body {
+    background-color: #ffffff;
+    color: rgb(17 24 39);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-bg,
+.solutions-bg,
+.red-section,
+#pricing > div,
+#latest,
+#cta,
+footer,
+nav {
+    transition: background 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: rgb(2 6 23);
+    color: rgb(226 232 240);
+}
+
+body.dark-theme nav {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme nav .nav-link,
+body.dark-theme nav .font-semibold,
+body.dark-theme nav .text-gray-700 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme nav .bg-white {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme nav .border-gray-200 {
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme nav .hover\:bg-gray-100:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme [data-mobile-menu] {
+    border-color: rgb(71 85 105) !important;
+    background-color: rgb(15 23 42) !important;
+}
+
+body.dark-theme .hero-bg {
+    background: linear-gradient(135deg, rgb(15 23 42) 25%, rgb(76 29 149) 60%, rgb(30 64 175) 100%);
+}
+
+body.dark-theme .hero-bg h1,
+body.dark-theme .hero-bg .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg .border-gray-800 {
+    border-color: rgb(148 163 184) !important;
+    color: rgb(241 245 249) !important;
+}
+
+body.dark-theme .hero-bg .hover\:bg-white\/70:hover {
+    background-color: rgb(51 65 85 / 0.8) !important;
+}
+
+body.dark-theme .hero-bg .bg-white\/90,
+body.dark-theme .hero-bg .bg-white {
+    background-color: rgb(15 23 42 / 0.92) !important;
+}
+
+body.dark-theme .solutions-bg {
+    background: linear-gradient(135deg, rgb(30 41 59) 0%, rgb(51 65 85) 45%, rgb(30 64 175) 100%);
+}
+
+body.dark-theme .solutions-bg h2,
+body.dark-theme .solutions-bg .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .solutions-bg .bg-white {
+    background-color: rgb(15 23 42 / 0.92) !important;
+    border: 1px solid rgb(71 85 105 / 0.6);
+}
+
+body.dark-theme .solutions-bg .bg-gray-200 {
+    background-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme .red-section {
+    background: linear-gradient(135deg, rgb(127 29 29) 0%, rgb(88 28 135) 55%, rgb(30 64 175) 100%);
+}
+
+body.dark-theme #pricing > div {
+    background: radial-gradient(circle at center 30%, #4c1d95 0%, #1e1b4b 45%, #020617 100%);
+}
+
+body.dark-theme #latest {
+    background-color: rgb(15 23 42) !important;
+}
+
+body.dark-theme #latest h2,
+body.dark-theme #latest h3,
+body.dark-theme #latest .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #cta {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #cta h2,
+body.dark-theme #cta .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #cta .bg-purple-100 {
+    background-color: rgb(76 29 149 / 0.35) !important;
+}
+
+body.dark-theme #cta .bg-white {
+    background-color: rgb(30 41 59) !important;
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #cta .hover\:bg-gray-100:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme footer {
+    background-color: rgb(1 4 12) !important;
+}
+
+body.dark-theme .nav-link:hover {
+    color: rgb(196 181 253) !important;
+}
+
+[data-theme-icon="sun"],
+[data-theme-icon="moon"] {
+    display: inline-block;
+}
+
+body:not(.dark-theme) [data-theme-icon="moon"] {
+    display: none !important;
+}
+
+body.dark-theme [data-theme-icon="sun"] {
+    display: none !important;
+}
