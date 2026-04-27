@@ -50,53 +50,6 @@ function initPricingMobileTabs() {
   renderTabs();
 }
 
-function initLanguageDropdown() {
-  const wrappers = document.querySelectorAll('[data-lang-dropdown]');
-  wrappers.forEach((wrapper) => {
-    const button = wrapper.querySelector('[data-dropdown-toggle]');
-    const menu = wrapper.querySelector('#languageDropdown');
-    if (!button || !menu || button.dataset.bound === 'true') {
-      return;
-    }
-
-    button.dataset.bound = 'true';
-
-    const closeMenu = () => {
-      menu.classList.add('hidden');
-      button.setAttribute('aria-expanded', 'false');
-    };
-
-    const toggleMenu = (event) => {
-      event.stopPropagation();
-      const isHidden = menu.classList.contains('hidden');
-      document.querySelectorAll('[data-lang-dropdown] #languageDropdown').forEach((dropdown) => {
-        dropdown.classList.add('hidden');
-      });
-      document.querySelectorAll('[data-lang-dropdown] [data-dropdown-toggle]').forEach((toggleButton) => {
-        toggleButton.setAttribute('aria-expanded', 'false');
-      });
-      if (isHidden) {
-        menu.classList.remove('hidden');
-        button.setAttribute('aria-expanded', 'true');
-      } else {
-        closeMenu();
-      }
-    };
-
-    button.addEventListener('click', toggleMenu);
-
-    document.addEventListener('click', (event) => {
-      if (!wrapper.contains(event.target)) {
-        closeMenu();
-      }
-    });
-
-    menu.querySelectorAll('a').forEach((item) => {
-      item.addEventListener('click', closeMenu);
-    });
-  });
-}
-
 function setTheme(theme) {
   const isDark = theme === 'dark';
   document.body.classList.toggle('dark-theme', isDark);
@@ -227,7 +180,6 @@ function initThemeToggle() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initPricingMobileTabs();
-  initLanguageDropdown();
   initProductsDropdown();
   initThemeToggle();
   initMobileMenu();
@@ -235,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('includes:loaded', () => {
   initPricingMobileTabs();
-  initLanguageDropdown();
   initProductsDropdown();
   initThemeToggle();
   initMobileMenu();

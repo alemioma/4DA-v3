@@ -146,84 +146,36 @@ body.dark-theme .hero-bg a:hover {
     color: rgb(224 231 255) !important;
 }
 
-body.dark-theme .hero-bg .border-gray-800 {
-    border-color: rgb(148 163 184) !important;
-    color: rgb(241 245 249) !important;
-}
-
-body.dark-theme .hero-bg .hover\:bg-white\/70:hover {
-    background-color: rgb(51 65 85 / 0.8) !important;
-}
-
-body.dark-theme .hero-bg .bg-white\/90,
-body.dark-theme .hero-bg .bg-white {
-    background-color: rgb(15 23 42 / 0.92) !important;
-}
-
-body.dark-theme .solutions-bg {
-    background: linear-gradient(135deg, rgb(30 41 59) 0%, rgb(51 65 85) 45%, rgb(30 64 175) 100%);
-}
-
-body.dark-theme .solutions-bg h2,
-body.dark-theme .solutions-bg .text-gray-600 {
+body.dark-theme .nav-link {
     color: rgb(226 232 240) !important;
 }
 
-body.dark-theme .solutions-bg .bg-white {
-    background-color: rgb(15 23 42 / 0.92) !important;
-    border: 1px solid rgb(71 85 105 / 0.6);
-}
-
-body.dark-theme .solutions-bg .bg-gray-200 {
-    background-color: rgb(71 85 105) !important;
-}
-
-body.dark-theme .red-section {
-    background: linear-gradient(135deg, rgb(127 29 29) 0%, rgb(88 28 135) 55%, rgb(30 64 175) 100%);
-}
-
-body.dark-theme #pricing > div {
-    background: radial-gradient(circle at center 30%, #4c1d95 0%, #1e1b4b 45%, #020617 100%);
-}
-
-body.dark-theme #latest {
-    background-color: rgb(15 23 42) !important;
-}
-
-body.dark-theme #latest h2,
-body.dark-theme #latest h3,
-body.dark-theme #latest .text-gray-600 {
-    color: rgb(226 232 240) !important;
-}
-
-body.dark-theme #cta {
+body.dark-theme #productsDropdown {
     background-color: rgb(15 23 42) !important;
     border-color: rgb(51 65 85) !important;
 }
 
-body.dark-theme #cta h2,
-body.dark-theme #cta .text-gray-600 {
+body.dark-theme #productsDropdown .text-gray-900 {
     color: rgb(226 232 240) !important;
 }
 
-body.dark-theme #cta .bg-purple-100 {
-    background-color: rgb(76 29 149 / 0.35) !important;
+body.dark-theme #productsDropdown .text-gray-500 {
+    color: rgb(148 163 184) !important;
 }
 
-body.dark-theme #cta .bg-white {
+body.dark-theme #productsDropdown .bg-gray-100 {
     background-color: rgb(30 41 59) !important;
-    color: rgb(196 181 253) !important;
 }
 
-body.dark-theme #cta .hover\:bg-gray-100:hover {
+body.dark-theme #productsDropdown .group:hover .bg-white {
     background-color: rgb(51 65 85) !important;
 }
 
-body.dark-theme footer {
-    background-color: rgb(1 4 12) !important;
+body.dark-theme #productsDropdown .hover\:bg-gray-50:hover {
+    background-color: rgb(30 41 59) !important;
 }
 
-body.dark-theme .nav-link:hover {
+body.dark-theme .group:hover .group-hover\:text-purple-600 {
     color: rgb(196 181 253) !important;
 }
 
