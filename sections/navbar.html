@@ -54,10 +54,21 @@
       </div>
 
       <div class="flex items-center gap-2 md:gap-4">
-        <button type="button" class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200">
-          <span class="text-base leading-none">🇬🇧</span>
-          <span class="hidden md:inline ml-2">English</span>
-        </button>
+        <div class="relative">
+          <button popovertarget="lang-popover-desktop" type="button" class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+            <span class="text-base leading-none" data-lang-flag>🇬🇧</span>
+            <span class="hidden md:inline ml-2" data-lang-label>English</span>
+            <svg class="hidden md:block ms-1.5 h-4 w-4 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+          </button>
+
+          <el-popover id="lang-popover-desktop" anchor="bottom start" popover class="mt-2 w-36 overflow-hidden rounded-xl bg-white shadow-lg outline-1 outline-gray-200 transition transition-discrete open:opacity-100 data-closed:opacity-0 data-closed:translate-y-1 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+            <ul class="p-2 text-sm font-medium text-gray-700" aria-label="Select language">
+              <li><a href="#" data-lang-select="en" data-lang-flag="🇬🇧" data-lang-label="English" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇬🇧</span> English</a></li>
+              <li><a href="#" data-lang-select="es" data-lang-flag="🇪🇸" data-lang-label="Español" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇪🇸</span> Español</a></li>
+              <li><a href="#" data-lang-select="sv" data-lang-flag="🇸🇪" data-lang-label="Svenska" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇸🇪</span> Svenska</a></li>
+            </ul>
+          </el-popover>
+        </div>
 
         <button id="themeToggle" class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-3 md:px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200" type="button" aria-label="Cambiar tema" aria-pressed="false">
           <i class="fas fa-sun" data-theme-icon="sun" aria-hidden="true"></i>
@@ -97,10 +108,21 @@
       </div>
 
       <div class="mt-4 flex flex-col gap-3 text-sm font-medium text-right">
-        <button type="button" class="inline-flex items-center justify-end w-full border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200">
-          <span class="text-base leading-none me-2">🇬🇧</span>
-          <span>English</span>
-        </button>
+        <div class="relative">
+          <button popovertarget="lang-popover-mobile" type="button" class="inline-flex items-center justify-end w-full border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+            <span class="text-base leading-none me-2" data-lang-flag>🇬🇧</span>
+            <span data-lang-label>English</span>
+            <svg class="ms-1.5 h-4 w-4 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+          </button>
+
+          <el-popover id="lang-popover-mobile" anchor="bottom end" popover class="mt-2 w-36 overflow-hidden rounded-xl bg-white shadow-lg outline-1 outline-gray-200 transition transition-discrete open:opacity-100 data-closed:opacity-0 data-closed:translate-y-1 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+            <ul class="p-2 text-sm font-medium text-gray-700" aria-label="Select language">
+              <li><a href="#" data-lang-select="en" data-lang-flag="🇬🇧" data-lang-label="English" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇬🇧</span> English</a></li>
+              <li><a href="#" data-lang-select="es" data-lang-flag="🇪🇸" data-lang-label="Español" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇪🇸</span> Español</a></li>
+              <li><a href="#" data-lang-select="sv" data-lang-flag="🇸🇪" data-lang-label="Svenska" class="lang-option inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900"><span class="text-base leading-none">🇸🇪</span> Svenska</a></li>
+            </ul>
+          </el-popover>
+        </div>
 
         <button id="mobileThemeToggle" class="inline-flex items-center justify-end w-full border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200" type="button" aria-label="Cambiar tema" aria-pressed="false">
           <i class="fas fa-sun" data-theme-icon="sun" aria-hidden="true"></i>

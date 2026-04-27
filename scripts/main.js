@@ -50,6 +50,39 @@ function initPricingMobileTabs() {
   renderTabs();
 }
 
+function initLanguageDropdown() {
+  function updateAllButtons(flag, label) {
+    document.querySelectorAll('button[popovertarget]').forEach((btn) => {
+      btn.querySelectorAll('[data-lang-flag]').forEach(el => { el.textContent = flag; });
+      btn.querySelectorAll('[data-lang-label]').forEach(el => { el.textContent = label; });
+    });
+  }
+
+  document.querySelectorAll('.lang-option').forEach((item) => {
+    if (item.dataset.langBound === 'true') return;
+    item.dataset.langBound = 'true';
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const flag = item.getAttribute('data-lang-flag');
+      const label = item.getAttribute('data-lang-label');
+      const lang = item.getAttribute('data-lang-select');
+      if (flag && label && lang) {
+        localStorage.setItem('lang', lang);
+        updateAllButtons(flag, label);
+      }
+    });
+  });
+
+  const savedLang = localStorage.getItem('lang') || 'en';
+  const options = document.querySelectorAll('.lang-option[data-lang-select]');
+  for (const opt of options) {
+    if (opt.getAttribute('data-lang-select') === savedLang) {
+      updateAllButtons(opt.getAttribute('data-lang-flag'), opt.getAttribute('data-lang-label'));
+      break;
+    }
+  }
+}
+
 function setTheme(theme) {
   const isDark = theme === 'dark';
   document.body.classList.toggle('dark-theme', isDark);
@@ -180,6 +213,7 @@ function initThemeToggle() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initPricingMobileTabs();
+  initLanguageDropdown();
   initProductsDropdown();
   initThemeToggle();
   initMobileMenu();
@@ -187,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('includes:loaded', () => {
   initPricingMobileTabs();
+  initLanguageDropdown();
   initProductsDropdown();
   initThemeToggle();
   initMobileMenu();
