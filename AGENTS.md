@@ -1,7 +1,26 @@
 # AI Agent Instructions — 4DA Website
 
 ## Project Overview
-Static website for 4DA built with HTML, Tailwind CSS v4, and Webpack. Uses runtime HTML includes via `scripts/include.js`.
+Static website for 4DA built with HTML, Tailwind CSS v4, and Webpack. Uses runtime HTML includes via `src/js/include.js`.
+
+## Directory Structure
+```
+src/
+├── js/              # JavaScript files (include.js, main.js, routes.js, app.js, vendor/)
+├── css/             # CSS files (main.css, style.css)
+├── app/
+│   ├── pages/       # Sub-pages (contact.html, terms.html, technology.html, etc.)
+│   ├── developers/  # Developer docs (css/, js/, sections/)
+│   └── sections/    # HTML partials (navbar.html, footer.html, etc.)
+├── lib/             # Config files (routes.js)
+├── tests/           # Test suite (index.html, test.js)
+├── img/             # Images
+└── dist/            # Build output
+index.html           # Main entry point
+index2.html          # Developers page entry point
+webpack.*.js         # Webpack configs
+package.json
+```
 
 ## AI Agent Skills
 Specialized skills are in `.agents/skills/` at the project root. Reference these for domain-specific guidance:
@@ -13,10 +32,10 @@ Specialized skills are in `.agents/skills/` at the project root. Reference these
 
 ### Theme (Light / Dark)
 - **Do NOT use** Tailwind's `dark:` prefix classes
-- Dark mode uses `body.dark-theme` class applied by `scripts/main.js`
-- All dark styles go in `styles/main.css` under `body.dark-theme` selectors
+- Dark mode uses `body.dark-theme` class applied by `src/js/main.js`
+- All dark styles go in `src/css/main.css` under `body.dark-theme` selectors
 - Theme preference persists in `localStorage`
-- Every page (including `pages/`) must support `.dark-theme`
+- Every page (including `src/app/pages/`) must support `.dark-theme`
 
 ### Responsive Design
 - Mobile-first: design for mobile, enhance for tablet (`md:`) and desktop (`lg:`)
@@ -25,14 +44,18 @@ Specialized skills are in `.agents/skills/` at the project root. Reference these
 - Test on 320px, 768px, and 1024+ viewports
 
 ### Routes
-- All sub-pages live in `pages/`
+- All sub-pages live in `src/app/pages/`
 - Use absolute paths: `/pages/name.html` (never relative `pages/name.html`)
-- Centralized in `config/routes.js` and `scripts/routes.js`
+- Centralized in `src/lib/routes.js` and `src/js/routes.js`
 - Sub-pages share the same navbar and footer as index
 
 ### HTML Includes
 - Partials in `sections/` are loaded via `<div data-include="/sections/file.html">`
 - All include paths must be absolute (start with `/`)
+
+### Scripts
+- JS files are served from `/js/` (e.g., `<script src="/js/include.js">`)
+- CSS output is served from `/css/styles.css` (webpack output)
 
 ---
 
@@ -73,32 +96,32 @@ Specialized skills are in `.agents/skills/` at the project root. Reference these
 > Shared footer with company links, social icons, legal links.
 > Background: `bg-zinc-950`. Dark theme compatible.
 
-### pages/contact.html
+### src/app/pages/contact.html
 > Fully functional contact page with:
 > - 4 info cards (Email, Phone, Address, Business Hours)
 > - Contact form (name, email, subject, message) → posts to `https://4da.se/contact-handler.php`
 > - Clickable email links (`mailto:`) and phone links (`tel:`)
-> - Uses semantic CSS classes with `body.dark-theme` overrides in `styles/main.css`
+> - Uses semantic CSS classes with `body.dark-theme` overrides in `src/css/main.css`
 > - Two-column layout on desktop, single column on mobile
 
-### pages/*.html (maintenance pages)
+### src/app/pages/*.html (maintenance pages)
 > technology.html, tdpnet.html, products.html, about.html
 > Each shows: wrench icon + "Page under maintenance" + "Back to home" link
-> Must support dark theme via CSS classes with body.dark-theme overrides in styles/main.css
+> Must support dark theme via CSS classes with body.dark-theme overrides in src/css/main.css
 
-### developers/
+### src/app/developers/
 > Developer documentation section. Has its own sidebar, search, and content system.
-> Uses separate CSS (`developers/css/style.css`) and JS (`developers/js/app.js`).
-> Dark theme uses `body.dark-theme` selectors in `developers/css/style.css`.
+> Uses separate CSS (`/developers/css/style.css`) and JS (`/developers/js/app.js`).
+> Dark theme uses `body.dark-theme` selectors in `src/app/developers/css/style.css`.
 
-### styles/main.css
+### src/css/main.css
 > Main stylesheet. Tailwind v4 entry point + custom styles + ALL `body.dark-theme` overrides.
 > When adding dark mode for any new component, add its `body.dark-theme` rules here.
 
-### scripts/main.js
+### src/js/main.js
 > Main JavaScript. Handles: mobile menu, product dropdown, language dropdown, theme toggle, pricing tabs.
 > Theme toggle adds/removes `.dark-theme` class on `<body>`.
 
-### tests/
+### src/tests/
 > Test suite at `/tests/index.html`. Tests routes, navbar links, includes, and page content.
 > Run via dev server. Auto-executes on load.

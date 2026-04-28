@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4DA - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+    <div data-include="/sections/navbar.html"></div>
+    <main id="contact-page" class="bg-gray-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-16">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Contact us</h1>
+                <p class="text-xl text-gray-500 max-w-4xl mx-auto">Get in touch with our team. We're here to help you find the right solution for your needs.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Left Panel - Contact Cards -->
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6 contact-heading">Get in Touch</h2>
+
+                        <!-- Email Card -->
+                        <div class="contact-card rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                                    <i class="fas fa-envelope text-purple-600"></i>
+                                    Email
+                                </h3>
+                            </div>
+                            <div class="px-6 pb-6">
+                                <p class="text-sm text-gray-500 mb-3">Contact our team by email for any inquiries.</p>
+                                <div class="space-y-1">
+                                    <p class="contact-info">Legals: <a href="mailto:clo@4da.se">clo@4da.se</a></p>
+                                    <p class="contact-info">Technology: <a href="mailto:cto@4da.se">cto@4da.se</a></p>
+                                    <p class="contact-info">Operation: <a href="mailto:ceo@4da.se">ceo@4da.se</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="contact-card rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                                    <i class="fas fa-phone text-purple-600"></i>
+                                    Phone
+                                </h3>
+                            </div>
+                            <div class="px-6 pb-6">
+                                <p class="text-sm text-gray-500 mb-3">Reach us by phone during business hours.</p>
+                                <div class="space-y-1">
+                                    <p class="contact-info">Legals: <a href="tel:+46707726656">+46 7 077 266 56</a></p>
+                                    <p class="contact-info">Technology: <a href="tel:+46812345679">+46 8 123 456 79</a></p>
+                                    <p class="contact-info">Operation: <a href="tel:+46812345680">+46 8 123 456 80</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Card -->
+                        <div class="contact-card rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt text-purple-600"></i>
+                                    Address
+                                </h3>
+                            </div>
+                            <div class="px-6 pb-6">
+                                <p class="text-sm text-gray-500 mb-3">Our headquarters location.</p>
+                                <div class="contact-info">
+                                    <p>Sweden</p>
+                                    <p>Jungmansgatan 12</p>
+                                    <p>742 41 Öregrund</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours Card -->
+                        <div class="contact-card rounded-xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-3">
+                                    <i class="fas fa-clock text-purple-600"></i>
+                                    Business Hours
+                                </h3>
+                            </div>
+                            <div class="px-6 pb-6">
+                                <p class="text-sm text-gray-500 mb-3">When you can reach us directly.</p>
+                                <div class="contact-info space-y-1">
+                                    <p>Monday - Friday: 08:00 - 17:00</p>
+                                    <p>Saturday: Closed</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Contact Form -->
+                    <div class="lg:pl-8">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-6 contact-subheading">Send us a message</h2>
+
+                        <div id="contact-success" class="contact-success-msg hidden mb-6 p-4 border rounded-lg">
+                            Message sent successfully! We'll get back to you soon.
+                        </div>
+
+                        <div id="contact-error" class="contact-error-msg hidden mb-6 p-4 border rounded-lg">
+                            Error sending message. Please try again.
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="contact-label block text-sm font-medium mb-2">
+                                    Full Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    autocomplete="name"
+                                    required
+                                    class="contact-input w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    placeholder="John Doe"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="email" class="contact-label block text-sm font-medium mb-2">
+                                    Email Address
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                    class="contact-input w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    placeholder="john@example.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="subject" class="contact-label block text-sm font-medium mb-2">
+                                    Subject
+                                </label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    autocomplete="off"
+                                    required
+                                    class="contact-input w-full px-4 py-3 border rounded-lg bg-white focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    placeholder="How can we help?"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="message" class="contact-label block text-sm font-medium mb-2">
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="6"
+                                    autocomplete="off"
+                                    required
+                                    class="contact-input w-full px-4 py-3 border rounded-lg bg-slate-50 focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    placeholder="Tell us more about your inquiry..."
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="contact-submit"
+                                class="contact-btn w-full py-3 rounded-lg font-semibold bg-purple-400 hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                Send message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div data-include="/sections/footer.html"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener('includes:loaded', function() {
+            var form = document.getElementById('contact-form');
+            var submitBtn = document.getElementById('contact-submit');
+            var successMsg = document.getElementById('contact-success');
+            var errorMsg = document.getElementById('contact-error');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                successMsg.classList.add('hidden');
+                errorMsg.classList.add('hidden');
+                var formData = new FormData(form);
+                fetch('https://4da.se/contact-handler.php', { method: 'POST', body: formData })
+                    .then(function(res) { return res.json(); })
+                    .then(function(result) {
+                        if (result.success) {
+                            successMsg.classList.remove('hidden');
+                            form.reset();
+                        } else {
+                            errorMsg.classList.remove('hidden');
+                        }
+                    })
+                    .catch(function() {
+                        errorMsg.classList.remove('hidden');
+                    })
+                    .finally(function() {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send message';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

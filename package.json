@@ -7,9 +7,10 @@
   "license": "",
   "author": "",
   "scripts": {
+    "dev": "webpack serve --open --config webpack.config.dev.js",
     "start": "webpack serve --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
-    "serve": "npx serve dist",
+    "serve": "npx serve src/dist",
     "test": "open http://localhost:8080/tests/index.html"
   },
   "devDependencies": {

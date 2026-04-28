@@ -1,0 +1,826 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@theme {
+    --breakpoint-nav: 1122px;
+}
+@source "../app/sections/*.html";
+@source "../../index.html";
+@source "../../index2.html";
+@source "../../404.html";
+@source "../js/*.js";
+@source "../app/developers/sections/*.html";
+@source "../app/developers/**/*.html";
+@source "../app/pages/*.html";
+@source "../../tests/*.html";
+
+body {
+    font-family: 'Inter', system_ui, sans-serif;
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #f3e8ff 40%, oklch(75% 0.183 55.934) 60%);
+}
+
+.solutions-bg {
+    background: linear-gradient(135deg, oklch(97.7% 0.014 308.299) 0%, oklch(97.7% 0.014 308.299) 0%, oklch(82.7% 0.119 306.383) 100%);
+}
+
+.red-section {
+    background: linear-gradient(135deg, oklch(45.5% 0.188 13.697) 0%, #7e22ce 100%);
+}
+
+.nav-link {
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #a855f7;
+}
+
+.partner-logo {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+}
+
+#pricing .pricing-table {
+    border-color: rgb(71 85 105 / 0.45);
+    color: rgb(226 232 240);
+}
+
+#pricing .pricing-table .text-gray-950,
+#pricing .pricing-table .text-gray-900,
+#pricing .pricing-table .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+#pricing .pricing-table .text-indigo-600 {
+    color: rgb(165 180 252) !important;
+}
+
+#pricing .pricing-table .bg-gray-50 {
+    background-color: rgb(15 23 42 / 0.9) !important;
+    border: 1px solid rgb(148 163 184 / 0.25);
+}
+
+#pricing .pricing-table .border-gray-100 {
+    border-color: rgb(148 163 184 / 0.22) !important;
+}
+
+#pricing .pricing-table .fill-green-600 {
+    fill: rgb(56 189 248) !important;
+}
+
+#pricing .pricing-table .fill-gray-400 {
+    fill: rgb(148 163 184) !important;
+}
+
+#pricing .pricing-table .bg-white {
+    background-color: rgb(15 23 42 / 0.8) !important;
+}
+
+#pricing .pricing-table .inset-ring-gray-300 {
+    --tw-inset-ring-color: rgb(148 163 184 / 0.5) !important;
+}
+
+body {
+    background-color: #ffffff;
+    color: rgb(17 24 39);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-bg,
+.solutions-bg,
+.red-section,
+#pricing > div,
+#latest,
+#cta,
+footer,
+nav {
+    transition: background 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: rgb(2 6 23);
+    color: rgb(226 232 240);
+}
+
+body.dark-theme nav {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme nav .nav-link,
+body.dark-theme nav .font-semibold,
+body.dark-theme nav .text-gray-700 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme nav .bg-white {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme nav .border-gray-200 {
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme nav .hover\:bg-gray-100:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme [data-mobile-menu] {
+    border-color: rgb(71 85 105) !important;
+    background-color: rgb(15 23 42) !important;
+}
+
+body.dark-theme [data-mobile-menu] .nav-link {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme [data-mobile-menu] .text-gray-700 {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme [data-mobile-menu] .border-gray-200 {
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme [data-mobile-menu] .hover\:bg-gray-100:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme [data-mobile-menu] .hover\:text-gray-900:hover {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme [data-mobile-menu] #mobileProductsDropdown {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme .mobile-contact-btn {
+    background-color: rgb(51 65 85) !important;
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .mobile-contact-btn:hover {
+    background-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme .hero-bg {
+    background: linear-gradient(135deg, rgb(15 23 42) 25%, rgb(76 29 149) 60%, rgb(30 64 175) 100%);
+}
+
+body.dark-theme .hero-bg h1,
+body.dark-theme .hero-bg .text-gray-600 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg a {
+    color: rgb(199 210 254) !important;
+}
+
+body.dark-theme .hero-bg a:hover {
+    color: rgb(224 231 255) !important;
+}
+
+body.dark-theme .hero-bg h2,
+body.dark-theme .hero-bg h1 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg .text-slate-700 {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme .hero-bg .text-slate-700:hover {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg button.bg-black {
+    background-color: rgb(31 41 55) !important;
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg button.bg-black:hover {
+    background-color: rgb(51 65 81) !important;
+}
+
+body.dark-theme .hero-bg button.border {
+    border-color: rgb(71 85 105) !important;
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .hero-bg button.border:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme .hero-bg .bg-white\/90 {
+    background-color: rgb(30 41 59 / 0.9) !important;
+}
+
+body.dark-theme .hero-bg .bg-white {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme .hero-bg .text-gray-600 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme .nav-link {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #productsDropdown {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #productsDropdown .text-gray-900 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #productsDropdown .text-gray-500 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #productsDropdown .bg-gray-100 {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme #productsDropdown .group:hover .bg-white {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #productsDropdown .hover\:bg-gray-50:hover {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme .group:hover .group-hover\:text-purple-600 {
+    color: rgb(196 181 253) !important;
+}
+
+[data-theme-icon="sun"],
+[data-theme-icon="moon"] {
+    display: inline-block;
+}
+
+body:not(.dark-theme) [data-theme-icon="moon"] {
+    display: none !important;
+}
+
+body.dark-theme [data-theme-icon="sun"] {
+    display: none !important;
+}
+
+/* Contact Page Dark Theme */
+body.dark-theme #contact-page {
+    background-color: rgb(2 6 23);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-theme #contact-page .contact-card {
+    background-color: rgb(30 41 59) !important;
+    border-color: rgb(71 85 105) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme #contact-page .contact-card h3 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #contact-page .contact-card p {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #contact-page .contact-card .contact-info {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #contact-page .contact-card a {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #contact-page .contact-card a:hover {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #contact-page .contact-heading {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #contact-page .contact-subheading {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #contact-page .contact-label {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #contact-page .contact-input {
+    background-color: rgb(30 41 59) !important;
+    border-color: rgb(71 85 105) !important;
+    color: rgb(226 232 240) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme #contact-page .contact-input::placeholder {
+    color: rgb(100 116 139) !important;
+}
+
+body.dark-theme #contact-page .contact-input:focus {
+    border-color: rgb(147 51 234) !important;
+}
+
+body.dark-theme #contact-page .contact-btn {
+    background-color: rgb(147 51 234);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-theme #contact-page .contact-btn:hover {
+    background-color: rgb(168 85 247);
+}
+
+body.dark-theme #contact-page .contact-success-msg {
+    background-color: rgba(34 197 94 0.1) !important;
+    border-color: rgba(34 197 94 0.3) !important;
+    color: rgb(134 239 172) !important;
+}
+
+body.dark-theme #contact-page .contact-error-msg {
+    background-color: rgba(239 68 68 0.1) !important;
+    border-color: rgba(239 68 68 0.3) !important;
+    color: rgb(252 165 165) !important;
+}
+
+/* Terms Page Dark Theme */
+body.dark-theme #terms-page {
+    background-color: rgb(2 6 23);
+}
+
+body.dark-theme #terms-page .prose p {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion {
+    background-color: rgb(30 41 59) !important;
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion summary {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion summary:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion .px-6 {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion a {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion a:hover {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #terms-page .terms-accordion .font-semibold {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page ul li {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #terms-page ul a {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #terms-page ul a:hover {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #terms-page h2 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page h3 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page > div > div:first-child h1 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page > div > div:first-child p {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #terms-page .bg-white {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme #terms-page .border-gray-200 {
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme #terms-page .text-gray-900 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #terms-page .text-gray-600 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #terms-page .text-gray-500 {
+    color: rgb(100 116 139) !important;
+}
+
+body.dark-theme #terms-page .hover\:bg-gray-50:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #terms-page .list-disc li::marker {
+    color: rgb(203 213 225) !important;
+}
+
+/* Maintenance Pages Dark Theme */
+.maintenance-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.maintenance-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maintenance-icon {
+    font-size: 3.75rem;
+    color: #d1d5db;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.maintenance-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #111827;
+    transition: color 0.3s ease;
+}
+
+.maintenance-text {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 28rem;
+    transition: color 0.3s ease;
+}
+
+.maintenance-link {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #9333ea;
+    transition: color 0.3s ease;
+}
+
+.maintenance-link:hover {
+    color: #7e22ce;
+}
+
+body.dark-theme .maintenance-section {
+    background-color: rgb(2 6 23);
+}
+
+body.dark-theme .maintenance-icon {
+    color: rgb(75 85 99);
+}
+
+body.dark-theme .maintenance-title {
+    color: rgb(226 232 240);
+}
+
+body.dark-theme .maintenance-text {
+    color: rgb(148 163 184);
+}
+
+body.dark-theme .maintenance-link {
+    color: rgb(196 181 253);
+}
+
+body.dark-theme .maintenance-link:hover {
+    color: rgb(221 214 254);
+}
+
+/* Footer Dark Theme */
+body.dark-theme footer {
+    background-color: rgb(24 24 27) !important;
+}
+
+body.dark-theme footer h4 {
+    color: rgb(107 114 128) !important;
+}
+
+body.dark-theme footer a {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme footer .text-gray-500 {
+    color: rgb(107 114 128) !important;
+}
+
+body.dark-theme footer .border-zinc-800 {
+    border-color: rgb(63 63 70) !important;
+}
+
+/* Navbar Contact Button */
+.contact-nav-btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.contact-nav-btn:hover {
+    background-color: #1f2937;
+}
+
+body.dark-theme .contact-nav-btn {
+    background-color: rgb(31 41 55);
+    color: rgb(226 232 240);
+}
+
+body.dark-theme .contact-nav-btn:hover {
+    background-color: rgb(55 65 81);
+}
+
+/* Solutions Section Dark Theme */
+body.dark-theme .solutions-bg {
+    background: linear-gradient(135deg, rgb(15 23 42) 0%, rgb(30 27 75) 100%);
+}
+
+body.dark-theme .solutions-bg .uppercase {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme .solutions-bg h2 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .solutions-bg .text-gray-600 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme .solutions-bg .bg-white {
+    background-color: rgb(30 41 59) !important;
+    border: 1px solid rgb(51 65 85);
+}
+
+body.dark-theme .solutions-bg .bg-gray-200 {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme .solutions-bg h3 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme .solutions-bg .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+}
+
+/* Red Section (Growth) Dark Theme */
+body.dark-theme .red-section {
+    background: linear-gradient(135deg, rgb(127 29 29) 0%, rgb(76 29 149) 100%);
+}
+
+body.dark-theme .red-section .bg-white\/15 {
+    background-color: rgb(255 255 255 / 0.1) !important;
+}
+
+body.dark-theme .red-section .ring-white\/30 {
+    --tw-ring-color: rgb(255 255 255 / 0.2) !important;
+}
+
+body.dark-theme .red-section .text-white\/80 {
+    color: rgb(255 255 255 / 0.7) !important;
+}
+
+/* Latest Section Dark Theme */
+body.dark-theme #latest {
+    background: radial-gradient(circle at center 30%, rgb(30 27 75) 0%, rgb(12 10 31) 40%, rgb(1 4 9) 100%);
+}
+
+body.dark-theme #latest h2 {
+    color: rgb(255 255 255) !important;
+}
+
+body.dark-theme #latest .text-slate-300 {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #latest .text-slate-400 {
+    color: rgb(148 163 184) !important;
+}
+
+/* Pricing Section Dark Theme */
+body.dark-theme #pricing > div {
+    background: radial-gradient(circle at center 30%, rgb(76 29 149) 0%, rgb(30 27 75) 45%, rgb(2 6 23) 100%);
+}
+
+body.dark-theme #pricing h2 {
+    color: rgb(255 255 255) !important;
+}
+
+body.dark-theme #pricing .text-slate-300 {
+    color: rgb(203 213 225) !important;
+}
+
+/* CTA Section Dark Theme */
+body.dark-theme #cta {
+    background-color: rgb(15 23 42) !important;
+    border-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #cta .bg-purple-100 {
+    background-color: rgb(76 29 149) !important;
+}
+
+body.dark-theme #cta .text-purple-700 {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #cta .bg-purple-600 {
+    background-color: rgb(168 85 247) !important;
+}
+
+body.dark-theme #cta h2 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #cta .text-gray-600 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #cta .bg-white {
+    background-color: rgb(31 41 55) !important;
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #cta button {
+    background-color: rgb(31 41 55) !important;
+    color: rgb(226 232 240) !important;
+    border: 1px solid rgb(51 65 85);
+}
+
+body.dark-theme #cta button:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+/* Solutions Cards Responsive */
+.solutions-card {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.solutions-card h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.solutions-heading {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    line-height: 1.3;
+}
+
+/* Policy Page Dark Theme */
+body.dark-theme #policy-page {
+    background-color: rgb(2 6 23);
+}
+
+body.dark-theme #policy-page .prose p {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion {
+    background-color: rgb(30 41 59) !important;
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion summary {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion summary:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion .px-6 {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion a {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion a:hover {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #policy-page .policy-accordion .font-semibold {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page ul li {
+    color: rgb(203 213 225) !important;
+}
+
+body.dark-theme #policy-page ul a {
+    color: rgb(196 181 253) !important;
+}
+
+body.dark-theme #policy-page ul a:hover {
+    color: rgb(221 214 254) !important;
+}
+
+body.dark-theme #policy-page h2 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page h3 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page > div > div:first-child h1 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page > div > div:first-child p {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #policy-page .bg-white {
+    background-color: rgb(30 41 59) !important;
+}
+
+body.dark-theme #policy-page .border-gray-200 {
+    border-color: rgb(71 85 105) !important;
+}
+
+body.dark-theme #policy-page .text-gray-900 {
+    color: rgb(226 232 240) !important;
+}
+
+body.dark-theme #policy-page .text-gray-600 {
+    color: rgb(148 163 184) !important;
+}
+
+body.dark-theme #policy-page .text-gray-500 {
+    color: rgb(100 116 139) !important;
+}
+
+body.dark-theme #policy-page .hover\:bg-gray-50:hover {
+    background-color: rgb(51 65 85) !important;
+}
+
+body.dark-theme #policy-page .list-disc li::marker {
+    color: rgb(203 213 225) !important;
+}
+
+/* Navbar 1122px Breakpoint */
+@media (max-width: 1121px) {
+    nav .desktop-nav { display: none !important; }
+    nav .nav-contact-desktop { display: none !important; }
+    nav .github-text { display: none !important; }
+    nav .lang-label { display: none !important; }
+    nav .lang-chevron { display: none !important; }
+    nav .hamburger-btn { display: inline-flex !important; }
+}
+@media (min-width: 1122px) {
+    nav .desktop-nav { display: flex !important; }
+    nav .nav-contact-desktop { display: inline-flex !important; }
+    nav .github-text { display: inline !important; }
+    nav .lang-label { display: inline !important; }
+    nav .lang-chevron { display: block !important; }
+    nav .hamburger-btn { display: none !important; }
+    nav .mobile-menu { display: none !important; }
+}
