@@ -1,18 +1,62 @@
-- name: Deploy to one.com via FTP
-  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-  with:
-    server: ${{ secrets.ONE_FTP_SERVER }}
-    username: ${{ secrets.ONE_FTP_USERNAME }}
-    password: ${{ secrets.ONE_FTP_PASSWORD }}
-    port: ${{ secrets.ONE_FTP_PORT || 21 }}
-    local-dir: ./src/dist/
-    server-dir: .                    # ← Muy importante: punto (.)
-    dangerous-clean-slate: true      # ← Actívalo temporalmente (limpia todo)
-    exclude: |
-      **/.DS_Store
-      **/Thumbs.db
-      **/*.map
-      **/*.md
-      **/.git*
-      **/.vscode/**
-      **/node_modules/**
+name: Deploy to one.com
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build production assets
+        run: pnpm run build
+
+      - name: Verify build output
+        run: |
+          echo "📁 Build folder content:"
+          ls -la ./src/dist
+          test -f ./src/dist/index.html || (echo "❌ Missing index.html" && exit 1)
+
+      - name: List files to upload
+        run: |
+          echo "📄 Files that will be uploaded:"
+          find ./src/dist -type f | head -n 20
+
+      - name: Deploy to one.com via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.ONE_FTP_SERVER }}
+          username: ${{ secrets.ONE_FTP_USERNAME }}
+          password: ${{ secrets.ONE_FTP_PASSWORD }}
+          port: ${{ secrets.ONE_FTP_PORT || 21 }}
+          local-dir: ./src/dist/
+          server-dir: .                    # ← Clave: sube directamente en la raíz
+          dangerous-clean-slate: true      # ← Limpia todo antes de subir (temporal)
+          exclude: |
+            **/.DS_Store
+            **/Thumbs.db
+            **/*.map
+            **/*.md
+            **/.git*
+            **/.vscode/**
+            **/node_modules/**
