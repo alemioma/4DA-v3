@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.ONE_FTP_PASSWORD }}
           port: ${{ secrets.ONE_FTP_PORT }}
           local-dir: ./src/dist/
-          server-dir: ${{ secrets.ONE_REMOTE_DIR }}
+          server-dir: /
           exclude: |
             **/.DS_Store
             **/Thumbs.db
