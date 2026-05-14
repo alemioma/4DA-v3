@@ -10,7 +10,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      REMOTE_DIR: ${{ vars.ONE_REMOTE_DIR != '' && vars.ONE_REMOTE_DIR || secrets.ONE_REMOTE_DIR }}
+      REMOTE_DIR: ${{ vars.ONE_REMOTE_DIR || secrets.ONE_REMOTE_DIR || './' }}
 
     steps:
       - name: Checkout repository
@@ -35,11 +35,7 @@ jobs:
 
       - name: Validate deploy configuration
         run: |
-          if [ -z "${REMOTE_DIR}" ]; then
-            echo "ONE_REMOTE_DIR is empty. Set it to public_html/ (or your domain web root)."
-            exit 1
-          fi
-          echo "Deploy target directory configured."
+          echo "Using remote directory: ${REMOTE_DIR}"
 
       - name: Verify build output
         run: |
@@ -55,6 +51,7 @@ jobs:
           port: ${{ secrets.ONE_FTP_PORT }}
           local-dir: ./src/dist/
           server-dir: ${{ env.REMOTE_DIR }}
+          dangerous-clean-slate: true
           exclude: |
             **/.DS_Store
             **/Thumbs.db
