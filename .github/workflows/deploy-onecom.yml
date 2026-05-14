@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      REMOTE_DIR: ${{ vars.ONE_REMOTE_DIR != '' && vars.ONE_REMOTE_DIR || secrets.ONE_REMOTE_DIR }}
 
     steps:
       - name: Checkout repository
@@ -31,6 +33,19 @@ jobs:
       - name: Build production assets
         run: pnpm run build
 
+      - name: Validate deploy configuration
+        run: |
+          if [ -z "${REMOTE_DIR}" ]; then
+            echo "ONE_REMOTE_DIR is empty. Set it to public_html/ (or your domain web root)."
+            exit 1
+          fi
+          echo "Deploy target directory configured."
+
+      - name: Verify build output
+        run: |
+          test -f ./src/dist/index.html || (echo "Build output missing index.html" && exit 1)
+          ls -la ./src/dist | head -n 40
+
       - name: Deploy to one.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -39,7 +54,7 @@ jobs:
           password: ${{ secrets.ONE_FTP_PASSWORD }}
           port: ${{ secrets.ONE_FTP_PORT }}
           local-dir: ./src/dist/
-          server-dir: ${{ secrets.ONE_REMOTE_DIR }}
+          server-dir: ${{ env.REMOTE_DIR }}
           exclude: |
             **/.DS_Store
             **/Thumbs.db
