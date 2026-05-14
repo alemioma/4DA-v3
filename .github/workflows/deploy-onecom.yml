@@ -1,0 +1,42 @@
+name: Deploy to one.com
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build production assets
+        run: pnpm run build
+
+      - name: Deploy to one.com via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.ONE_FTP_SERVER }}
+          username: ${{ secrets.ONE_FTP_USERNAME }}
+          password: ${{ secrets.ONE_FTP_PASSWORD }}
+          port: ${{ secrets.ONE_FTP_PORT }}
+          local-dir: ./src/dist/
+          server-dir: ${{ secrets.ONE_REMOTE_DIR }}
