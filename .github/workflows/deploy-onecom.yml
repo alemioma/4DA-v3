@@ -51,7 +51,7 @@ jobs:
           port: ${{ secrets.ONE_FTP_PORT }}
           local-dir: ./src/dist/
           server-dir: ${{ env.REMOTE_DIR }}
-          dangerous-clean-slate: true
+          dangerous-clean-slate: false
           exclude: |
             **/.DS_Store
             **/Thumbs.db
