@@ -40,3 +40,11 @@ jobs:
           port: ${{ secrets.ONE_FTP_PORT }}
           local-dir: ./src/dist/
           server-dir: ${{ secrets.ONE_REMOTE_DIR }}
+          exclude: |
+            **/.DS_Store
+            **/Thumbs.db
+            **/*.map
+            **/*.md
+            **/.git*
+            **/.vscode/**
+            **/node_modules/**

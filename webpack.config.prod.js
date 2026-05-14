@@ -18,6 +18,7 @@ module.exports = merge(common, {
       patterns: [
         { from: 'src/img', to: 'img' },
         { from: 'src/app/sections', to: 'sections' },
+        { from: 'src/app/pages', to: 'pages' },
         { from: 'src/app/developers', to: 'developers' },
         { from: 'src/js', to: 'js' },
         { from: 'src/js/vendor', to: 'js/vendor' },

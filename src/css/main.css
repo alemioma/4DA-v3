@@ -824,3 +824,46 @@ body.dark-theme #policy-page .list-disc li::marker {
     nav .hamburger-btn { display: none !important; }
     nav .mobile-menu { display: none !important; }
 }
+
+/* Green Grid Pattern Background - Reusable Component */
+.green-pattern-bg {
+    position: relative;
+    overflow: hidden;
+    background: rgb(54 180 159 / 0.05);
+}
+
+.green-pattern-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgb(54 180 159 / 0.08) 0%, rgb(219 255 117 / 0.08) 100%);
+    mask-image: radial-gradient(ellipse 100% 100% at 50% 20%, black, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 20%, black, transparent);
+    pointer-events: none;
+}
+
+body.dark-theme .green-pattern-bg {
+    background: rgb(54 180 159 / 0.15);
+}
+
+body.dark-theme .green-pattern-bg::before {
+    background: linear-gradient(135deg, rgb(54 180 159 / 0.3) 0%, rgb(219 255 117 / 0.3) 100%);
+}
+
+.green-pattern-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='72' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.5 56V.5H72' fill='none' stroke='rgb(0 0 0 / 0.05)'/%3E%3C/svg%3E");
+    transform: skewY(-18deg);
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+body.dark-theme .green-pattern-bg::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='72' height='56' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.5 56V.5H72' fill='none' stroke='rgb(255 255 255 / 0.05)'/%3E%3C/svg%3E");
+    opacity: 1;
+}
